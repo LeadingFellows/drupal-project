@@ -1,0 +1,15 @@
+{
+	"packages": {
+		"LeadingFellows/drupal-project": {
+			"8.x-dev": {
+				"name": "LeadingFellows/drupal-project",
+				"version": "8.x-dev",
+				"source": {
+					"url": "https://github.com/LeadingFellows/drupal-project.git",
+					"type": "git",
+					"reference": "8.x"
+				}
+			}
+		}
+	}
+}
