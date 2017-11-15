@@ -21,7 +21,7 @@ After that you can create the project:
 
 
 ```
-composer create-project  --repository-url=https://raw.githubusercontent.com/LeadingFellows/drupal-project/master/packages.json  LeadingFellows/drupal-project:8.x-dev some-dir --stability dev --no-interaction
+composer create-project  --repository-url=https://raw.githubusercontent.com/LeadingFellows/drupal-project/8.x/composer/packages.json  LeadingFellows/drupal-project:8.x-dev some-dir --stability dev --no-interaction
 ```
 
 ```
