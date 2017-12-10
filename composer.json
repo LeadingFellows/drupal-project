@@ -26,7 +26,7 @@
         "webmozart/path-util": "^2.3",
         "wikimedia/composer-merge-plugin": "dev-master",
         "oomphinc/composer-installers-extender": "~1.0",
-        "leadingfellows/drupal_starter_kit_base": "dev-master"
+        "leadingfellows/drupal_starter_kit_profile": "dev-master"
     },
     "require-dev": {
         "behat/mink": "~1.7",
