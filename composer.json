@@ -30,7 +30,8 @@
         "webmozart/path-util": "^2.3",
         "wikimedia/composer-merge-plugin": "dev-master",
         "oomphinc/composer-installers-extender": "~1.0",
-        "leadingfellows/drupal_starter_kit_profile": "dev-master"
+        "leadingfellows/drupal_starter_kit_profile": "dev-master",
+        "leadingfellows/drupal_starter_kit_module": "dev-master"
     },
     "require-dev": {
         "behat/mink": "~1.7",
@@ -97,12 +98,12 @@
             "require": [
             ],
             "recurse": true,
-            "replace": false,
+            "replace": true,
             "ignore-duplicates": false,
             "merge-dev": true,
-            "merge-extra": false,
-            "merge-extra-deep": false,
-            "merge-scripts": false
+            "merge-extra": true,
+            "merge-extra-deep": true,
+            "merge-scripts": true
         }
     }
 }
