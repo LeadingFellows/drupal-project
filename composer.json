@@ -1,6 +1,6 @@
 {
     "name": "leadingfellows/drupal-project",
-    "description": "Project template for Drupal 8 projects with composer (forked from drupal-composer/drupal-project)",
+    "description": "Project template for Drupal 8 projects with composer",
     "type": "project",
     "license": "GPL-2.0+",
     "authors": [
@@ -20,27 +20,17 @@
         }
     ],
     "require": {
-        "composer/installers": "~1.2",
-        "cweagans/composer-patches": "~1.6",
-        "drupal-composer/drupal-scaffold": "~2.2",
-        "drupal/console": "~1.0.2",
-        "drupal/core": "~8.4",
-        "drush/drush": "~8.0",
-        "webflo/drupal-finder": "^1.0.0",
-        "webmozart/path-util": "^2.3",
-        "wikimedia/composer-merge-plugin": "dev-master",
-        "oomphinc/composer-installers-extender": "~1.0",
+        "composer/installers": ">=1.2",
+        "cweagans/composer-patches": ">=1.6",
+        "drupal-composer/drupal-scaffold": "^2.2",
+        "drupal/console": "^1.0",
+        "drupal/core": "^8.6",
+        "drush/drush": "^9.0",
+        "oomphinc/composer-installers-extender": "^1.0",
         "leadingfellows/drupal_starter_kit_profile": "dev-master",
         "leadingfellows/drupal_starter_kit_module": "dev-master"
     },
     "require-dev": {
-        "behat/mink": "~1.7",
-        "behat/mink-goutte-driver": "~1.2",
-        "jcalderonzumba/gastonjs": "~1.0.2",
-        "jcalderonzumba/mink-phantomjs-driver": "~0.3.1",
-        "mikey179/vfsstream": "~1.2",
-        "phpunit/phpunit": ">=4.8.28 <5",
-        "symfony/css-selector": "~2.8|~3.0"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -48,33 +38,29 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
-        "sort-packages": true
-    },
+    	"sort-packages": true,
+        "secure-http": true,
+        "optimize-autoloader": true,
+        "discard-changes": true
+	},
     "autoload": {
         "classmap": [
             "scripts/composer/ScriptHandler.php"
         ]
     },
     "scripts": {
-        "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
-        "pre-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
-        ],
-        "pre-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
-        ],
-        "post-install-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-        ],
-        "post-update-cmd": [
-            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-        ]
     },
     "extra": {
+	    "drupal-scaffold": {
+			"omit-defaults": false
+        },
         "installer-types": [
             "bower-asset",
             "npm-asset"
         ],
+        "patchLevel": {
+            "drupal/core": "-p2"
+        },
         "installer-paths": {
             "web/core": ["type:drupal-core"],
             "web/libraries/{$name}": ["type:drupal-library", "type:bower-asset", "type:npm-asset"],
@@ -82,12 +68,12 @@
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
             "drush/contrib/{$name}": ["type:drupal-drush"]
-            
+             
         },
         "enable-patching": true,
         "merge-plugin": {
             "include": [
-                "composer.local.json",
+                "composer.*.json",
                 "web/modules/custom/*/composer.json",
                 "web/modules/contrib/*/composer.json",
                 "web/themes/custom/*/composer.json",
