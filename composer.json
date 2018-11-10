@@ -43,13 +43,6 @@
         "optimize-autoloader": true,
         "discard-changes": true
 	},
-    "autoload": {
-        "classmap": [
-            "scripts/composer/ScriptHandler.php"
-        ]
-    },
-    "scripts": {
-    },
     "extra": {
 	    "drupal-scaffold": {
 			"omit-defaults": false
